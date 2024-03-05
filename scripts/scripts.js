@@ -14,17 +14,16 @@ let kmTrip = parseInt(prompt("Quanti km vuoi percorrere?"));
 // Chiediamo l'età del passeggero
 let passengerAge = parseInt(prompt("Quanti anni hai?"));
 
-// Moltiplichiamo km percorsi per 0.21€.
-let priceForKm = (kmTrip * 0.21);
+// Calcoliamo prezzo viaggio, moltiplichiamo km percorsi per 0.21€.
+let priceTrip = (kmTrip * 0.21);
 
-// Creiamo sconto 20% per passeggeri con età inferiore 18 anni.
-let discount20;
-if (passengerAge < 18) {
-    discount20 = priceForKm * (20/100);
+// Calcoliamo applicazione sconti in base all'età dei passeggeri.
+
+let totalPrice = priceTrip;
+if (passengerAge < 20) {
+    totalPrice = priceTrip - priceTrip * (20/100);
 }
-// Creiamo sconto 40% per passeggeri con età superiore 65 anni.
-let discount40;
-if (passengerAge > 65) {
-    discount40 = priceForKm * (40/100);
+else if (passengerAge > 65) {
+    totalPrice = priceTrip - priceTrip * (40/100);
 }
 
