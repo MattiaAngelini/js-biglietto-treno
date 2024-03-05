@@ -16,4 +16,15 @@ let passengerAge = parseInt(prompt("Quanti anni hai?"));
 
 // Moltiplichiamo km percorsi per 0.21€.
 let priceForKm = (kmTrip * 0.21);
-console.log(priceForKm);
+
+// Creiamo sconto 20% per passeggeri con età inferiore 18 anni.
+let discount20;
+if (passengerAge < 18) {
+    discount20 = priceForKm * (20/100);
+}
+// Creiamo sconto 40% per passeggeri con età superiore 65 anni.
+let discount40;
+if (passengerAge > 65) {
+    discount40 = priceForKm * (40/100);
+}
+
