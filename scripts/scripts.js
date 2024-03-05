@@ -18,12 +18,13 @@ let passengerAge = parseInt(prompt("Quanti anni hai?"));
 let priceTrip = (kmTrip * 0.21);
 
 // Calcoliamo applicazione sconti in base all'età dei passeggeri.
-
 let totalPrice = priceTrip;
 if (passengerAge < 20) {
-    totalPrice = priceTrip - priceTrip * (20/100);
+    totalPrice = priceTrip - priceTrip * 0.20;
 }
 else if (passengerAge > 65) {
-    totalPrice = priceTrip - priceTrip * (40/100);
+    totalPrice = priceTrip - priceTrip * 0.40;
 }
 
+// OUTPUT PREZZO FINALE
+document.getElementById('TotalPrice').innerHTML = totalPrice.toFixed(2) + "€";
